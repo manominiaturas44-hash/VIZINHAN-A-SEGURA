@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1456a0">
+<meta name="description" content="Vizinhança Segura - comunicação e colaboração comunitária">
+<title>Vizinhança Segura</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--navy:#123d70;--blue:#1762ad;--blue2:#eaf3ff;--ink:#172b45;--muted:#718198;--line:#e7edf4;--bg:#f5f8fc;--white:#fff;--green:#16845b;--orange:#c87919;--red:#c33c46}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}.app-shell{min-height:100vh;display:flex}.sidebar{width:245px;background:#103b6d;color:#fff;padding:27px 17px;display:flex;flex-direction:column;flex-shrink:0}.brand{display:flex;align-items:center;gap:11px;padding:0 9px 38px}.brand-mark{width:42px;height:42px;border-radius:13px;background:#fff;color:#1456a0;display:grid;place-items:center;font-weight:800;font-family:Manrope}.brand b{display:block;font:800 17px Manrope}.brand span{display:block;font-size:10px;letter-spacing:2.2px;color:#bcd7f4;margin-top:2px}.side-label{font-size:10px;letter-spacing:1.5px;color:#8fb2d8;padding:0 12px 12px}.nav{border:0;background:transparent;color:#c7d8eb;padding:13px 14px;text-align:left;border-radius:10px;margin:3px 0;font:600 14px 'DM Sans';cursor:pointer;display:flex;gap:13px;align-items:center}.nav span{font-size:13px}.nav.active,.nav:hover{background:#24588c;color:white}.sidebar-bottom{margin-top:auto;padding:17px 10px 5px;border-top:1px solid #315b83;color:#d5e5f6;font-size:11px}.sidebar-bottom small{display:block;color:#9ebbd8;margin:6px 0 0 15px}.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#53d49a;margin-right:7px}.main{width:calc(100% - 245px);max-width:1500px;margin:0 auto;padding:28px 42px 22px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.eyebrow{font-size:10px;letter-spacing:1.5px;color:#6f8baa;font-weight:800}.topbar h1{font:800 25px Manrope;margin:5px 0 0}.user-chip{display:flex;gap:10px;align-items:center;background:white;border:1px solid var(--line);padding:8px 13px;border-radius:12px}.avatar{height:34px;width:34px;border-radius:50%;background:#e4effc;color:#1456a0;display:grid;place-items:center;font-size:11px;font-weight:800}.user-chip b,.user-chip small{display:block;font-size:11px}.user-chip small{color:var(--muted);margin-top:3px}.page{display:none}.page.active{display:block}.welcome{background:linear-gradient(115deg,#12477f,#1d6bb4);border-radius:18px;padding:31px 36px;color:white;display:flex;align-items:center;justify-content:space-between;overflow:hidden;min-height:190px}.welcome-tag{font-size:10px;letter-spacing:1.6px;color:#b9d9f8;font-weight:800}.welcome h2{font:800 27px/1.2 Manrope;margin:10px 0}.welcome p{font-size:13px;color:#d6e8fa;margin:0}.welcome-icon{font-size:90px;color:#ffffff35;margin-right:25px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:19px 0 27px}.stat{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;align-items:center;gap:14px}.stat-icon{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;font-size:21px}.blue{background:#e8f2ff;color:#1762ad}.orange{background:#fff3e3;color:#c87919}.green{background:#e5f7ef;color:#16845b}.stat span,.stat small{display:block;color:var(--muted);font-size:11px}.stat strong{font:800 25px Manrope;display:block;margin:3px 0}.stat small{font-size:10px}.section-heading{display:flex;align-items:center;justify-content:space-between;margin:22px 0 12px}.section-heading h3{font:800 16px Manrope;margin:0}.section-heading p,.toolbar p{font-size:12px;color:var(--muted);margin:4px 0 0}.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.quick-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px;text-align:left;cursor:pointer;color:var(--ink);display:flex;flex-direction:column;min-height:154px}.quick-card:hover{border-color:#8db7e5;transform:translateY(-1px)}.quick-icon{width:34px;height:34px;background:#eaf3ff;color:#1762ad;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:18px;margin-bottom:13px}.quick-card b{font-size:13px}.quick-card small{font-size:11px;color:var(--muted);margin-top:5px}.quick-card i{font-style:normal;color:#1762ad;font-weight:700;font-size:11px;margin-top:auto;padding-top:13px}.emergency-quick .quick-icon{background:#fff0f0;color:#c33c46}.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:17px;margin-top:12px}.empty{text-align:center;color:#8796a9;font-size:12px;padding:25px}.notice{border:1px solid #f1dfb7;background:#fff9ec;border-radius:12px;padding:14px 17px;margin:20px 0;color:#805b1e}.notice b{font-size:12px}.notice p{font-size:11px;line-height:1.6;margin:5px 0 0}.notice.privacy{background:#eef6ff;border-color:#d5e6fa;color:#315b83}.toolbar{display:flex;align-items:center;justify-content:space-between;margin:8px 0 20px}.toolbar h2{font:800 20px Manrope;margin:0}.primary,.danger,.secondary{border:0;border-radius:9px;padding:11px 15px;font:700 12px 'DM Sans';cursor:pointer}.primary{background:#1762ad;color:white}.primary:hover{background:#104e8c}.danger{background:#c33c46;color:white}.secondary{background:#edf2f8;color:#52647a}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:11px}th{text-align:left;color:#7b8da3;font-size:10px;font-weight:700;padding:11px;border-bottom:1px solid var(--line)}td{padding:13px 11px;border-bottom:1px solid #f0f3f7;color:#42556c}td:first-child{font-weight:700;color:#203a57}.pill{display:inline-block;border-radius:20px;padding:5px 9px;background:#e7f6ee;color:#16845b;font-size:10px;font-weight:700}.pill.open{background:#fff0e6;color:#b86a1a}.trip-grid,.notice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.trip-card,.notice-card{background:white;border:1px solid var(--line);border-radius:13px;padding:17px}.trip-card h3,.notice-card h3{font:700 14px Manrope;margin:0 0 8px}.trip-card p,.notice-card p{font-size:11px;color:var(--muted);line-height:1.6;margin:5px 0}.trip-date{color:#1762ad!important;font-weight:700}.notice-card .date{font-size:10px;color:#8b9aab}.backdrop{position:fixed;inset:0;background:#10243c88;display:grid;place-items:center;padding:18px;z-index:10}.hidden{display:none!important}.modal{width:min(100%,490px);background:white;border-radius:17px;padding:24px;box-shadow:0 20px 70px #0c254555;max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:19px}.modal h2{font:800 21px Manrope;margin:5px 0}.close{border:0;background:#edf2f8;border-radius:50%;width:32px;height:32px;font-size:21px;color:#53677d;cursor:pointer}.field{margin:12px 0}.field label{display:block;font-size:11px;font-weight:700;color:#40556e;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;border:1px solid #dce5ef;border-radius:8px;padding:11px;font:12px 'DM Sans';color:#203a57;background:white}.field textarea{min-height:75px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #c7e0fb;border-color:#78aee2}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:22px}.toast{position:fixed;bottom:22px;right:22px;background:#173e68;color:white;padding:12px 17px;border-radius:9px;font-size:12px;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none;z-index:20}.toast.show{opacity:1;transform:translateY(0)}footer{text-align:center;color:#9aa8b8;font-size:10px;padding:30px 0 5px}footer span{padding:0 5px}
+@media(max-width:900px){.sidebar{width:205px}.main{width:calc(100% - 205px);padding:25px 22px}.stats{gap:9px}.stat{padding:13px;gap:9px}.quick-grid{gap:9px}}
+@media(max-width:650px){.app-shell{display:block}.sidebar{width:100%;height:auto;padding:12px;display:block}.brand{padding:0 5px 12px}.side-label,.sidebar-bottom{display:none}.sidebar .nav{display:inline-flex;padding:9px 10px;margin:2px;font-size:12px}.nav span{font-size:11px}.main{width:100%;padding:20px 14px}.topbar{margin-bottom:18px}.topbar h1{font-size:21px}.user-chip{padding:6px}.user-chip small{display:none}.welcome{padding:23px;min-height:165px}.welcome h2{font-size:23px}.welcome-icon{font-size:60px;margin:0}.stats{grid-template-columns:1fr;gap:8px;margin:12px 0 20px}.stat{padding:12px}.quick-grid{grid-template-columns:1fr}.quick-card{min-height:130px}.trip-grid,.notice-grid{grid-template-columns:1fr}.toolbar{gap:10px;align-items:flex-start}.toolbar h2{font-size:18px}.toolbar .primary,.toolbar .danger{white-space:nowrap;padding:10px}.modal{padding:19px}}
+</style>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">VS</div><div><b>Vizinhança</b><span>SEGURA</span></div></div>
+    <div class="side-label">MENU PRINCIPAL</div>
+    <button class="nav active" data-page="inicio">⌂ <span>Visão geral</span></button>
+    <button class="nav" data-page="moradores">♙ <span>Moradores</span></button>
+    <button class="nav" data-page="emergencias">⚠ <span>Emergências</span></button>
+    <button class="nav" data-page="viagens">➜ <span>Avisos de viagem</span></button>
+    <button class="nav" data-page="comunicados">▤ <span>Comunicados</span></button>
+    <div class="sidebar-bottom"><div class="status-dot"></div><span>Conectado ao Firebase</span><small>Sincronizado na nuvem</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="eyebrow">ASSOCIAÇÃO DE MORADORES</div><h1 id="page-title">Visão geral</h1></div><div class="user-chip"><div class="avatar">AD</div><div><b>Administrador</b><small>Perfil ativo</small></div></div></header>
+    <section id="page-inicio" class="page active">
+      <div class="welcome"><div><span class="welcome-tag">PAINEL DA COMUNIDADE</span><h2>Olá! Bem-vindo ao<br>Vizinhança Segura.</h2><p>Informação, colaboração e cuidado começam com a comunidade.</p></div><div class="welcome-icon">⌂</div></div>
+      <div class="stats">
+        <article class="stat"><div class="stat-icon blue">♙</div><div><span>Moradores cadastrados</span><strong id="stat-residents">0</strong><small>Cadastros no Firestore</small></div></article>
+        <article class="stat"><div class="stat-icon orange">⚠</div><div><span>Alertas registrados</span><strong id="stat-alerts">0</strong><small>Ocorrências cadastradas</small></div></article>
+        <article class="stat"><div class="stat-icon green">➜</div><div><span>Avisos de viagem ativos</span><strong id="stat-trips">0</strong><small>Ausências em andamento</small></div></article>
+      </div>
+      <div class="section-heading"><div><h3>Acesso rápido</h3><p>Principais recursos da associação</p></div></div>
+      <div class="quick-grid">
+        <button class="quick-card emergency-quick" data-action="emergency"><span class="quick-icon">!</span><b>Registrar emergência</b><small>Registrar um alerta para a associação</small><i>Registrar agora →</i></button>
+        <button class="quick-card" data-action="trip"><span class="quick-icon">➜</span><b>Informar uma viagem</b><small>Avise seus contatos autorizados</small><i>Cadastrar viagem →</i></button>
+        <button class="quick-card" data-action="resident"><span class="quick-icon">♙</span><b>Cadastrar morador</b><small>Adicionar um residente ao sistema</small><i>Novo cadastro →</i></button>
+      </div>
+      <div class="section-heading"><div><h3>Atividade recente</h3><p>Últimos registros no aplicativo</p></div></div>
+      <div class="panel"><div id="recent-list" class="empty">Carregando dados da nuvem...</div></div>
+      <div class="notice"><b>Importante sobre emergências</b><p>Este aplicativo é um canal complementar de comunicação comunitária. Em situações reais, acione diretamente os serviços oficiais: Polícia 190, SAMU 192 ou Bombeiros 193, conforme o caso.</p></div>
+    </section>
+    <section id="page-moradores" class="page">
+      <div class="toolbar"><div><h2>Moradores</h2><p>Gerencie os cadastros da comunidade.</p></div><button class="primary" data-action="resident">＋ Novo morador</button></div>
+      <div class="panel"><div class="table-wrap"><table><thead><tr><th>Morador</th><th>Endereço</th><th>Telefone</th><th>Contato de confiança</th><th>Ação</th></tr></thead><tbody id="residents-table"></tbody></table></div><div id="residents-empty" class="empty">Nenhum morador cadastrado.</div></div>
+    </section>
+    <section id="page-emergencias" class="page">
+      <div class="toolbar"><div><h2>Emergências e ocorrências</h2><p>Registre e acompanhe alertas comunitários.</p></div><button class="danger" data-action="emergency">＋ Novo alerta</button></div>
+      <div class="notice"><b>Canal complementar</b><p>O registro no aplicativo não chama automaticamente os serviços públicos. Ligue 190, 192 ou 193 quando necessário.</p></div>
+      <div class="panel"><div class="table-wrap"><table><thead><tr><th>Ocorrência</th><th>Morador</th><th>Local</th><th>Data</th><th>Status</th><th>Ação</th></tr></thead><tbody id="alerts-table"></tbody></table></div><div id="alerts-empty" class="empty">Nenhuma ocorrência registrada.</div></div>
+    </section>
+    <section id="page-viagens" class="page">
+      <div class="toolbar"><div><h2>Avisos de viagem</h2><p>Compartilhamento restrito com contatos autorizados.</p></div><button class="primary" data-action="trip">＋ Informar viagem</button></div>
+      <div class="notice privacy"><b>Privacidade em primeiro lugar</b><p>Informações sobre ausência residencial são sensíveis. Nesta aplicação, os dados ficam armazenados na nuvem (Firestore).</p></div>
+      <div id="trips-list" class="trip-grid"></div><div id="trips-empty" class="empty panel">Nenhum aviso de viagem cadastrado.</div>
+    </section>
+    <section id="page-comunicados" class="page">
+      <div class="toolbar"><div><h2>Comunicados</h2><p>Informações e avisos da associação.</p></div><button class="primary" data-action="notice">＋ Novo comunicado</button></div>
+      <div id="notices-list" class="notice-grid"></div><div id="notices-empty" class="empty panel">Ainda não há comunicados publicados.</div>
+    </section>
+    <footer>Vizinhança Segura <span>•</span> Projeto comunitário — Integrado ao Firebase Firestore</footer>
+  </main>
+</div>
+
+<div id="modal-backdrop" class="backdrop hidden">
+  <div class="modal">
+    <div class="modal-head">
+      <div><span class="eyebrow">VIZINHANÇA SEGURA</span><h2 id="modal-title">Novo registro</h2></div>
+      <button class="close" id="modal-close" aria-label="Fechar">×</button>
+    </div>
+    <form id="modal-form">
+      <div id="modal-fields"></div>
+      <div class="modal-actions">
+        <button type="button" class="secondary" id="cancel">Cancelar</button>
+        <button type="submit" class="primary">Salvar registro</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+
+<!-- Módulos do Firebase (v10 Modular SDK) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyASeamAnv5ccF-jAyPAhlJVN4DFTxhi0S4",
+    authDomain: "vizinhanca-segura-2c31a.firebaseapp.com",
+    projectId: "vizinhanca-segura-2c31a",
+    storageBucket: "vizinhanca-segura-2c31a.firebasestorage.app",
+    messagingSenderId: "604444744576",
+    appId: "1:604444744576:web:1d0144f0c5a53c2f9cff65"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const seed = {
+    residents: [],
+    alerts: [],
+    trips: [],
+    notices: [
+      { id: "1", title: "Bem-vindos ao Vizinhança Segura", body: "Este é o canal digital da nossa comunidade. Cadastre-se e conheça os recursos disponíveis.", date: new Date().toISOString(), author: "Associação de Moradores" }
+    ]
+  };
+
+  let data = structuredClone(seed);
+  let currentType = "";
+
+  async function load() {
+    try {
+      const residentsSnap = await getDocs(collection(db, "residents"));
+      const alertsSnap = await getDocs(collection(db, "alerts"));
+      const tripsSnap = await getDocs(collection(db, "trips"));
+      const noticesSnap = await getDocs(collection(db, "notices"));
+
+      data.residents = residentsSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+      data.alerts = alertsSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+      data.trips = tripsSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+      const loadedNotices = noticesSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+      if (loadedNotices.length > 0) {
+        data.notices = loadedNotices;
+      } else {
+        await addDoc(collection(db, "notices"), seed.notices[0]);
+        data.notices = seed.notices;
+      }
+    } catch (e) {
+      console.error("Erro ao carregar do Firestore:", e);
+    }
+    render();
+  }
+
+  async function saveItem(group, itemData) {
+    try {
+      const docRef = await addDoc(collection(db, group), itemData);
+      return docRef.id;
+    } catch (e) {
+      console.error("Erro ao salvar no Firestore:", e);
+      toast("Erro ao salvar no Firebase.");
+      throw e;
+    }
+  }
+
+  async function removeItem(group, id) {
+    if (!confirm("Deseja realmente excluir este registro?")) return;
+    try {
+      await deleteDoc(doc(db, group, String(id)));
+      data[group] = data[group].filter(x => x.id !== id);
+      render();
+      toast("Registro excluído.");
+    } catch (e) {
+      console.error("Erro ao excluir do Firestore:", e);
+      toast("Erro ao excluir.");
+    }
+  }
+  window.removeItem = removeItem;
+
+  function esc(s = "") { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])) }
+  function fmt(d) { return d ? new Date(d + "T12:00:00").toLocaleDateString("pt-BR") : "—" }
+  function toast(msg) { let t = document.querySelector("#toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2600) }
+
+  function go(page) {
+    document.querySelectorAll(".page").forEach(x => x.classList.remove("active"));
+    document.querySelector("#page-" + page).classList.add("active");
+    document.querySelectorAll(".nav").forEach(x => x.classList.toggle("active", x.dataset.page === page));
+    document.querySelector("#page-title").textContent = ({ inicio: "Visão geral", moradores: "Moradores", emergencias: "Emergências", viagens: "Avisos de viagem", comunicados: "Comunicados" })[page];
+  }
+  document.querySelectorAll(".nav").forEach(b => b.addEventListener("click", () => go(b.dataset.page)));
+  document.querySelectorAll("[data-action]").forEach(b => b.addEventListener("click", () => openForm(b.dataset.action)));
+  document.querySelector("#modal-close").onclick = closeForm;
+  document.querySelector("#cancel").onclick = closeForm;
+  function closeForm() { document.querySelector("#modal-backdrop").classList.add("hidden") }
+
+  function field(label, name, type = "text", required = true, placeholder = "", options = []) {
+    let el = type === "select" ? `<select name="${name}" ${required ? "required" : ""}>${options.map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join("")}</select>` : type === "textarea" ? `<textarea name="${name}" placeholder="${esc(placeholder)}" ${required ? "required" : ""}></textarea>` : `<input name="${name}" type="${type}" placeholder="${esc(placeholder)}" ${required ? "required" : ""}>`;
+    return `<div class="field"><label>${label}</label>${el}</div>`
+  }
+
+  function openForm(type) {
+    currentType = type; let title = "", html = "";
+    if (type === "resident") { title = "Cadastrar morador"; html = field("Nome completo", "name") + field("Endereço / número", "address") + field("Telefone", "phone", "tel") + field("E-mail (opcional)", "email", "email", false) + field("Vizinho ou contato de confiança", "trusted", "text", false, "Nome e telefone") }
+    if (type === "emergency") { title = "Registrar emergência"; html = field("Morador", "resident", "select", true, "", ["Selecione um morador", ...data.residents.map(r => r.name)]) + field("Tipo de ocorrência", "kind", "select", true, "", ["Segurança", "Emergência médica", "Incêndio", "Vazamento", "Problema elétrico", "Outro"]) + field("Local da ocorrência", "location") + field("Descrição", "description", "textarea") + `<div class="notice"><b>Atenção</b><p>Este registro não aciona serviços oficiais. Em emergência real, ligue 190, 192 ou 193.</p></div>` }
+    if (type === "trip") { title = "Informar viagem"; html = field("Morador", "resident", "select", true, "", ["Selecione um morador", ...data.residents.map(r => r.name)]) + field("Data de saída", "start", "date") + field("Data de retorno", "end", "date") + field("Contato autorizado", "contact") + field("Telefone do contato", "phone", "tel") + field("Observações (opcional)", "notes", "textarea", false) }
+    if (type === "notice") { title = "Novo comunicado"; html = field("Título", "title") + field("Mensagem", "body", "textarea") + field("Responsável", "author", "text", true, "Associação de Moradores") }
+    document.querySelector("#modal-title").textContent = title;
+    document.querySelector("#modal-fields").innerHTML = html;
+    document.querySelector("#modal-backdrop").classList.remove("hidden");
+  }
+
+  document.querySelector("#modal-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    let f = Object.fromEntries(new FormData(e.target).entries());
+
+    if (currentType === "resident") {
+      if (data.residents.some(r => r.name.toLowerCase() === f.name.toLowerCase())) return toast("Este morador já está cadastrado.");
+      const id = await saveItem("residents", f);
+      data.residents.push({ id, ...f });
+    }
+    if (currentType === "emergency") {
+      if (f.resident === "Selecione um morador") return toast("Selecione um morador.");
+      const alertData = { ...f, date: new Date().toISOString(), status: "Aberta" };
+      const id = await saveItem("alerts", alertData);
+      data.alerts.unshift({ id, ...alertData });
+    }
+    if (currentType === "trip") {
+      if (f.resident === "Selecione um morador") return toast("Selecione um morador.");
+      if (f.end < f.start) return toast("A data de retorno deve ser posterior à saída.");
+      const id = await saveItem("trips", f);
+      data.trips.unshift({ id, ...f });
+    }
+    if (currentType === "notice") {
+      const noticeData = { ...f, date: new Date().toISOString() };
+      const id = await saveItem("notices", noticeData);
+      data.notices.unshift({ id, ...noticeData });
+    }
+
+    render();
+    closeForm();
+    e.target.reset();
+    toast("Registro salvo no Firebase!");
+  });
+
+  function render() {
+    document.querySelector("#stat-residents").textContent = data.residents.length;
+    document.querySelector("#stat-alerts").textContent = data.alerts.length;
+    let today = new Date().toISOString().slice(0, 10);
+    document.querySelector("#stat-trips").textContent = data.trips.filter(t => t.start <= today && t.end >= today).length;
+
+    let rt = document.querySelector("#residents-table");
+    rt.innerHTML = data.residents.map(r => `<tr><td>${esc(r.name)}</td><td>${esc(r.address)}</td><td>${esc(r.phone)}</td><td>${esc(r.trusted || "Não informado")}</td><td><button class="secondary" onclick="removeItem('residents','${r.id}')">Excluir</button></td></tr>`).join("");
+    document.querySelector("#residents-empty").style.display = data.residents.length ? "none" : "block";
+
+    let at = document.querySelector("#alerts-table");
+    at.innerHTML = data.alerts.map(a => `<tr><td>${esc(a.kind)}</td><td>${esc(a.resident)}</td><td>${esc(a.location)}</td><td>${new Date(a.date).toLocaleString("pt-BR")}</td><td><span class="pill open">${esc(a.status)}</span></td><td><button class="secondary" onclick="removeItem('alerts','${a.id}')">Excluir</button></td></tr>`).join("");
+    document.querySelector("#alerts-empty").style.display = data.alerts.length ? "none" : "block";
+
+    let tl = document.querySelector("#trips-list");
+    tl.innerHTML = data.trips.map(t => `<article class="trip-card"><h3>✈ ${esc(t.resident)}</h3><p class="trip-date">${fmt(t.start)} até ${fmt(t.end)}</p><p><b>Contato autorizado:</b> ${esc(t.contact)} — ${esc(t.phone)}</p><p>${esc(t.notes || "Sem observações")}</p><button class="secondary" onclick="removeItem('trips','${t.id}')">Excluir aviso</button></article>`).join("");
+    document.querySelector("#trips-empty").style.display = data.trips.length ? "none" : "block";
+
+    let nl = document.querySelector("#notices-list");
+    nl.innerHTML = data.notices.map(n => `<article class="notice-card"><span class="date">${new Date(n.date).toLocaleDateString("pt-BR")} • ${esc(n.author || "Associação")}</span><h3>${esc(n.title)}</h3><p>${esc(n.body)}</p><button class="secondary" onclick="removeItem('notices','${n.id}')">Excluir</button></article>`).join("");
+    document.querySelector("#notices-empty").style.display = data.notices.length ? "none" : "block";
+
+    let recent = [...data.alerts.map(x => ({ label: "Alerta: " + x.kind, who: x.resident, date: x.date })), ...data.trips.map(x => ({ label: "Aviso de viagem", who: x.resident, date: x.start })), ...data.residents.map(x => ({ label: "Novo cadastro", who: x.name, date: new Date().toISOString() }))].slice(0, 5);
+    document.querySelector("#recent-list").innerHTML = recent.length ? recent.map(x => `<div style="display:flex;justify-content:space-between;border-bottom:1px solid #edf1f5;padding:10px 3px;font-size:11px"><b>${esc(x.label)} — ${esc(x.who)}</b><span style="color:#8393a5">${x.date ? new Date(x.date).toLocaleDateString("pt-BR") : ""}</span></div>`).join("") : 'Ainda não há atividades. Use os atalhos acima para começar.';
+  }
+
+  load();
+</script>
+</body>
+</html>
